@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #logo123 {
+            height: 65px;
+        }
+
+        .slider {
+            width: 800px;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .slides {
+            width: 500%;
+            height: 500px;
+            display: flex;
+        }
+
+        .slides input {
+            display: none;
+        }
+
+        .slide {
+            width: 20%;
+            transition: 2s;
+        }
+
+        .slide img {
+            width: 800px;
+            height: 500px;
+        }
+
+        .navigation-manual {
+            position: absolute;
+            width: 800px;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .manual-btn {
+            border: 2px solid rgb(247, 183, 104);
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .manual_btn:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        .manual-btn:hover {
+            background: rgb(247, 183, 104);
+        }
+
+        #radio1:checked~.first {
+            margin-left: 0;
+        }
+
+        #radio2:checked~.first {
+            margin-left: -20%;
+        }
+
+        #radio3:checked~.first {
+            margin-left: -40%;
+        }
+
+        #radio4:checked~.first {
+            margin-left: -60%;
+        }
+
+        #radio5 checked~.first {
+            margin-left: -80%;
+        }
+
+        .navigation-auto {
+            position: absolute;
+            display: flex;
+            width: 800px;
+            justify-content: center;
+            margin-top: 460px;
+
+        }
+
+        .navigation-auto div {
+            border: 2px solid rgb(241, 163, 68);
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+        }
+
+        .navigation-auto div:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        #radio1:checked~.navigation-auto .auto-btn1 {
+            background: rgb(241, 163, 68);
+        }
+
+        #radio2:checked~.navigation-auto .auto-btn2 {
+            background: rgb(241, 163, 68);
+        }
+
+        #radio3:checked~.navigation-auto .auto-btn3 {
+            background: rgb(241, 163, 68);
+        }
+
+        #radio4:checked~.navigation-auto .auto-btn4 {
+            background: rgb(241, 163, 68);
+        }
+
+        #radio5:checked~.navigation-auto .auto-btn5 {
+            background: rgb(241, 163, 68);
+        }
+
+
+
+        #navbar ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 0;
+            width: 100%;
+            background-color: antiquewhite;
+            height: 55px;
+        }
+
+
+
+        #navbar ul li {
+            color: black;
+            list-style: none;
+            font-size: 1.5rem;
+
+
+        }
+
+        #navbar ul li a {
+            display: block;
+            padding-right: 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: black;
+            font-family: "Lobster variant0", Tofu;
+            font-weight: bolder;
+
+        }
+
+
+        #navbar ul li a:hover {
+            color: blue;
+
+        }
+
+        #navbar::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            height: 5%;
+            width: 100%;
+        }
+
+        #header {
+            width: 100%;
+        }
+
+        #header img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 45%;
+
+        }
+
+        p {
+            font-size: 23px;
+            color: darkblue;
+            border-style: ridge;
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%;
+
+            object-fit: contain;
+        }
+
+        .con {
+            width: 50%;
+            height: 50%;
+        }
+
+        .feedback {
+            width: 50%;
+        }
+
+        h1 {
+            color: white;
+            background-color: darkblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            align-content: center;
+            margin-top: 20px;
+            font-size: 22px;
+            padding: 10px 15px 10px 15px;
+            border-radius: 15px;
+            border: 0;
+            background-image: linear-gradient(90deg, rgba(255, 123, 0, 0.9), rgba(255, 0, 0, 0.9));
+        }
+
+        .btn:hover {
+            cursor: pointer;
+            color: rgb(1, 1, 16);
+        }
+
+        #footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.rem;
+            background-color: rgb(244, 213, 176);
+            color: black;
+            font-weight: 800;
+            height: 200px;
+        }
+
+        @media (max-width: 700px) {
+            .contact {
+                display: block;
+            }
+
+            .con,
+            .feedback {
+                width: 100%;
+                height: 50%;
+            }
+
+            #map {
+                width: 100%;
+            }
+
+            #navbar ul {
+                height: 25px;
+            }
+
+            #navbar ul li {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul id="nav">
+            <li id="items"><a href="html code.html"><img id="logo123" src="final2.png" alt=""></a></li>
+            <li id="items"><a href="html code.html">Home</a></li>
+            <li id="items"><a href="about us.html">About Us </a></li>
+            <li id="items"><a href="services.html">Services</a> </a></li>
+
+        </ul>
+
+    </nav>
+    <br><br>
+
+    <center>
+        <br><br>
+
+        <div class="contact">
+
+
+
+            <div id="map" style="width: 100%"><iframe width="95%" height="500" frameborder="0" scrolling="no"
+                    marginheight="0" marginwidth="0"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=IIIT%20nagpur+(Dr%20Wellnes)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                        href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe>
+            </div>
+
+            <div class="con">
+                <img style="margin-top: 0px;" src="Contact us/contact us.png" alt="">
+            </div>
+            <div class="con">
+                <img src="Contact us/details.png" alt="">
+            </div>
+        </div>
+        <h1>Reviews</h1>
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+
+
+                <div class="slide first">
+                    <img src="Contact us/fb1.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="Contact us/fb2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="Contact us/fb3.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="Contact us/fb4.jpg" alt="">
+                </div>
+                <div class="slide ">
+                    <img src="Contact us/fb5.jpg" alt="">
+                </div>
+
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+
+
+                </div>
+                <!-- </div> -->
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            var counter = 1;
+            setInterval(function () {
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if (counter > 4) {
+                    counter = 1;
+                }
+            }, 3000);
+        </script>
+        <h1>Want to share your views with us then please do fill this feedback form </h1>
+        <div id="button">
+            <button class="btn"><a href="feedback.html">Feeback</a></button>
+        </div>
+        <br>
+        <br>
+        <footer id="footer"> Contact us on 9934561200 Email :- drwellnesscentre12@gmail.com<br>
+            <br> Developed by:- Tanisha Mehta, Nikhil Mishra,Divya Thakkar and Saurabh Shukla.
+        </footer>
+    </center>
+</body>
+
+</html>
